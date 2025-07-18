@@ -151,6 +151,12 @@ background-repeat: no-repeat;
 background-position: center top;
 }  
 
+.bgHerodetalle {
+background: url("assets/images/fondo%20hero%20detalle.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center top;
+}  
 /* SEPARADOR ANTES DE EQUIPO */
 .separador-equipo {
   background-color: #FFF4EE;
