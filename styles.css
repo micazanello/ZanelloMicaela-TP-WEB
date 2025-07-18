@@ -58,33 +58,40 @@ h3 {
 }
 /* 3. NAVBAR */
 .navbar {
-  background-color:transparent;
+  background-color: #1646BD;
   transition: background-color 0.3s, box-shadow 0.3s;
   padding: 15px 0;
 }
 
-.navbar.scrolled {
-  background-color: #fff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+.navbar .navbar-brand {
+  font-family: 'Dharma Gothic ExBold', sans-serif;
+  font-size: 27.2px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white !important;
 }
 
-.navbar-brand {
-  font-weight: 600;
-  font-size: 1.7rem;
-  color: var(--dark-color);
-}
-
-.nav-link {
-  color: #000000;
+.navbar .nav-link {
+  color: white !important;
   font-weight: 500;
   margin-left: 20px;
   transition: color 0.3s;
 }
 
-.nav-link:hover {
-  color: #FFF4EE;
+/* Al hacer scroll (navbar blanca, texto negro) */
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+  color: black !important;
+}
+
+.navbar .nav-link:hover {
+  color: #FFF4EE !important;
+}
 /* 4. HERO */
 .row.p-5 {
   min-height: 90vh;
@@ -157,6 +164,17 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center top;
 }  
+
+@media (max-width: 768px) {
+  .why-list h3 {
+    font-size: 1rem; /* Tamaño más chico en pantallas chicas */
+  }
+
+  .why-list img {
+    width: 40px;
+    height: 40px;
+  }
+}
 /* SEPARADOR ANTES DE EQUIPO */
 .separador-equipo {
   background-color: #FFF4EE;
@@ -202,15 +220,18 @@ section h2 {
   display: block;
 }   
 
-/* 6. CARDS */
+
+
+
+
+/* ========== CARDS ========== */
+
 .card {
   border: none;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
-
-  /* NUEVO para centrado y layout */
   text-align: center;
   padding: 2rem;
   display: flex;
@@ -218,28 +239,43 @@ section h2 {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-.card img.plan-image {
+.card .plan-image {
   margin-bottom: 1.5rem;
   max-width: 100%;
   height: auto;
 }
 
-.card .plan-title {
+.plan-title {
   font-family: 'Dharma Gothic ExBold', sans-serif;
-  font-size: 28px;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: white;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.card .plan-price {
+.plan-price {
   font-family: 'Dharma Gothic ExBold', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.plan-price small {
   font-size: 24px;
-  margin-top: 1rem;
+  font-weight: 600;
 }
 
 .card ul {
@@ -264,18 +300,36 @@ section h2 {
   color: #6c757d;
 }
 
-/* OPCIONAL: Responsive para pantallas chicas */
+/* Fondos por tipo */
+.card-basico {
+  background-image: url('../images/fondo_card_negra.png');
+}
+
+.card-pro {
+  background-image: url('../images/fondo_card_roja.png');
+}
+
+/* ========== MOBILE ========== */
 @media (max-width: 768px) {
   .card {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 
   .card .plan-title {
-    font-size: 22px;
+    font-size: 32px;
   }
 
   .card .plan-price {
-    font-size: 20px;
+    font-size: 32px;
+  }
+
+  .card .plan-price small {
+    font-size: 18px;
+  }
+
+  .card .plan-image {
+    max-width: 200px;
+    max-height: 200px;
   }
 }
 
@@ -349,7 +403,10 @@ img.rounded-circle {
   line-height: 1.4;
   color: 1646BD;
 }
-
+/* H3 usa Inter Extra Bold */
+.h3-custom-white {
+  color: white;
+}
 /* ESTILOS INDIVIDUALES */
 .h1-custom {
   font-size: 82px;
@@ -761,7 +818,26 @@ img.rounded-circle {
   font-family: 'Dharma Gothic ExBold', sans-serif;
 }
 
+/* Estilo cuando la pregunta está ABIERTA */
+.accordion-item .accordion-button:not(.collapsed) {
+  background-color: #ffffff;
+  color: #000000; /* O el color de texto que prefieras */
+  border-bottom: 1px solid #ccc;
+}
 
+/* Estilo cuando la pregunta está CERRADA */
+.accordion-item .accordion-button.collapsed {
+  background-color: #3c3c3c;
+  color: #ffffff;
+}
+
+/* Estilo general del contenedor */
+.accordion-item {
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
 /* ============================== */
 /* MEDIA QUERIES */
 /* ============================== */
