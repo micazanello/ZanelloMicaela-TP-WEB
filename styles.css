@@ -345,17 +345,21 @@ section h2 {
 }
 
 /* 8. FORMULARIO */
-form .form-control {
-  border-radius: 8px;
-  border: 1px solid #ced4da;
-}
-
 form button.btn-primary {
-  background-color: var(--primary-color);
+  background-color: #1646BD;
   border: none;
   width: 100%;
   border-radius: 50px;
   margin-top: 20px;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+form button.btn-primary:hover,
+form button.btn-primary:focus {
+  background-color: #0f2e80; /* Azul más oscuro al hacer hover */
+  color: white;
 }
 
 /* 9. FOOTER */
